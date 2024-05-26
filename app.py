@@ -48,31 +48,5 @@ with col1:
 
 # Add a button for prediction
 if st.button("Get Prediction"):
-    # Create a dictionary with user inputs
-    model_data_dict = {
-        "Intake_Type": Intake_Type,
-        "Intake_Condition": Intake_Condition,
-        "Animal_Type": Animal_Type,
-        "Sex_upon_Intake": Sex_upon_Intake,
-        "Animal Group": Animal_Group,
-        "Age_Upon_Intake_Days": Age_Upon_Intake_Days
-    }
-
-    # Send the data to the API for prediction
-    response = requests.get(f'https://projete1-api.onrender.com/predict?Intake_Type={model_data_dict["Intake_Type"]}&Intake_Condition={model_data_dict["Intake_Condition"]}&Animal_Type={model_data_dict["Animal_Type"]}&Sex_upon_Intake={model_data_dict["Sex_upon_Intake"]}&Age_Upon_Intake_Days={model_data_dict["Age_Upon_Intake_Days"]}')
-
-
-    # Check if the request was successful
-    if response.status_code == 200:
-        st.success("Prediction received successfully!")
-        prediction = response.json()  # Assuming API returns JSON
-        # Display the prediction or do something with it
-        st.write(prediction)
-    else:
-        st.error(f"Failed to get prediction. Error code: {response.status_code}")
-
-
-    # model_data_df = pd.DataFrame(model_data_dict, index=[0])
-
-    # response = requests.get(f'https://projete1-api.onrender.com/predict?Intake_Type={model_data_dict["Intake_Type"]}&Intake_Condition={model_data_dict["Intake_Condition"]}&Animal_Type={model_data_dict["Animal_Type"]}&Sex_upon_Intake={model_data_dict["Sex_upon_Intake"]}&Age_Upon_Intake_Days={model_data_dict["Age_Upon_Intake_Days"]}')
-    # model_data_df["Prediction"]=json.loads(response.content.decode("utf-8"))["result"][0]
+    prediction = random.choice(["Transfer","Adoption","Return to Owner"])
+    st.write(f"Prdiction result : {prediction}")
