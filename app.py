@@ -49,4 +49,4 @@ with col1:
 # Add a button for prediction
 if st.button("Get Prediction"):
     prediction = random.choice(["Transfer","Adoption","Return to Owner"])
-    st.write(f"Prdiction result : {prediction}")
+    st.write(f"Prediction result : {prediction}")
