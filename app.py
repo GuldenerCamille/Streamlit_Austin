@@ -48,8 +48,8 @@ with col1:
 
 # Add a button for prediction
 if st.button("Get Prediction"):
-    prediction = random.choice(["Transfer","Adoption","Return to Owner"])
-    st.write(f"Prediction result : {prediction}")
-    score = round(random.uniform(0.6, 0.9), 2)
-    st.write(f"Prediction result : {prediction}, With a confidence score of : {score}")
-    
+        if not Intake_Type or not Intake_Condition or not Animal_Type or not Sex_upon_Intake or not Age_Upon_Intake_Days or not Animal_Group :
+            st.error("Please fill out all the fields")
+        else :
+            prediction = random.choice(["Transfer","Adoption","Return to Owner"])
+            st.write(f"Prediction result : {prediction}")
