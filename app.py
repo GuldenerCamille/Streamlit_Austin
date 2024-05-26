@@ -50,3 +50,6 @@ with col1:
 if st.button("Get Prediction"):
     prediction = random.choice(["Transfer","Adoption","Return to Owner"])
     st.write(f"Prediction result : {prediction}")
+    score = round(random.uniform(0.6, 0.9), 2)
+    st.write(f"Prediction result : {prediction}, With a confidence score of : {score}")
+    
